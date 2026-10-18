@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medical AI Toolkit</title>
+<meta name="description" content="Free, open-source tools for understanding drugs, drug safety, drug targets, and the evidence behind them. They run in your browser on public FDA, NIH, and research data.">
+<style>
+  :root {
+    --bg: #f6f6f3; --card: #fcfcfb; --text: #1c1c1e; --muted: #52514e; --line: #e1e1dc; --accent: #1d5c86;
+    --amber: #a86400; --coral: #c2410c; --violet: #6250d6; --teal: #0f7c6c; --rose: #b4235a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121314; --card: #1a1a19; --text: #f0efec; --muted: #c3c2b7; --line: #34342f; --accent: #5aa3d6;
+      --amber: #f0b44c; --coral: #f08a5d; --violet: #9f93ee; --teal: #4cc3ae; --rose: #f07aa5;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 920px; margin: 0 auto; padding: 40px 16px 56px; }
+  h1 { font-size: 2rem; margin: 0 0 8px; }
+  h2 { font-size: 1.2rem; margin: 40px 0 12px; }
+  .lede { color: var(--muted); font-size: 1.08rem; margin: 0 0 8px; max-width: 680px; }
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 24px; }
+  .tool { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; border-top: 5px solid var(--c); display: flex; flex-direction: column; }
+  .tool h3 { margin: 0 0 4px; font-size: 1.15rem; }
+  .tool h3 a { color: var(--text); text-decoration: none; }
+  .tool h3 a:hover { text-decoration: underline; }
+  .who { color: var(--c); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+  .tool p { margin: 0 0 12px; color: var(--muted); font-size: 0.95rem; }
+  .tries { margin-top: auto; font-size: 0.88rem; }
+  .tries span { color: var(--muted); }
+  .tries a { color: var(--accent); margin-right: 10px; white-space: nowrap; }
+  .open { display: inline-block; margin-top: 12px; font-weight: 600; color: var(--c); text-decoration: none; }
+  .open:hover { text-decoration: underline; }
+  .flow { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+  .flow ol { margin: 0; padding-left: 20px; }
+  .flow li { margin: 8px 0; }
+  .flow b { color: var(--text); }
+  .note { color: var(--muted); font-size: 0.88rem; }
+  footer { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.86rem; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Medical AI Toolkit</h1>
+  <p class="lede">Free, open-source tools for understanding drugs and tumor test results: what drugs are approved for, what the studies found, what side effects people report, what else is being developed against the same target, and whether the references behind a claim are real.</p>
+  <p class="note">Each tool runs in your browser on public data from the FDA, the National Library of Medicine, ClinicalTrials.gov, and open research databases. No sign-up, no tracking, nothing stored.</p>
+
+  <div class="grid">
+    <section class="tool" style="--c: var(--amber)">
+      <div class="who">For patients and families</div>
+      <h3><a href="drug-label-explainer/">Drug Label Explainer</a></h3>
+      <p>Type a drug you saw in an ad or heard from a doctor. Read its FDA label in plain English: approved uses, what the main studies found, what it says about age, and common side effects.</p>
+      <div class="tries"><span>Try:</span> <a href="drug-label-explainer/?drug=Kisqali&amp;age=72">Kisqali, age 72</a><a href="drug-label-explainer/?drug=Ozempic">Ozempic</a></div>
+      <a class="open" href="drug-label-explainer/">Open the tool</a>
+    </section>
+
+    <section class="tool" style="--c: var(--rose)">
+      <div class="who">For patients and families</div>
+      <h3><a href="tumor-report-translator/">Tumor Report Translator</a></h3>
+      <p>Paste or upload a tumor DNA test report (Foundation Medicine, Tempus, Caris, and others). Each gene change is explained in plain English, with the FDA-approved drugs for that change, split into ones approved for your cancer and ones approved for other cancers, plus recruiting trials. The report stays on your device.</p>
+      <div class="tries"><span>Try:</span> <a href="tumor-report-translator/?sample=1">A fictional lung cancer report</a></div>
+      <a class="open" href="tumor-report-translator/">Open the tool</a>
+    </section>
+
+    <section class="tool" style="--c: var(--coral)">
+      <div class="who">Drug safety</div>
+      <h3><a href="adverse-event-explorer/">Adverse Event Explorer</a></h3>
+      <p>Compare the side effects reported to the FDA for up to four drugs, side by side, with each drug's report trend over time. Terms that describe the disease being treated are set aside.</p>
+      <div class="tries"><span>Try:</span> <a href="adverse-event-explorer/?drugs=ketamine,esketamine,sertraline">Ketamine vs esketamine</a><a href="adverse-event-explorer/?drugs=daratumumab,isatuximab">Anti-CD38 antibodies</a></div>
+      <a class="open" href="adverse-event-explorer/">Open the tool</a>
+    </section>
+
+    <section class="tool" style="--c: var(--violet)">
+      <div class="who">For researchers and investors</div>
+      <h3><a href="drug-target-tracker/">Drug Target Tracker</a></h3>
+      <p>Type a drug target and see every drug aimed at it, labeled FDA-approved, approved outside the US, clinical, or preclinical, plus the latest PubMed papers, preprints, and ASCO, ASH, AACR, ESMO, and EHA abstracts.</p>
+      <div class="tries"><span>Try:</span> <a href="drug-target-tracker/?target=BCMA">BCMA</a><a href="drug-target-tracker/?target=KRAS">KRAS</a><a href="drug-target-tracker/?target=BCL2">BCL2</a></div>
+      <a class="open" href="drug-target-tracker/">Open the tool</a>
+    </section>
+
+    <section class="tool" style="--c: var(--teal)">
+      <div class="who">For writers and reviewers</div>
+      <h3><a href="citation-checker/">Citation Checker</a></h3>
+      <p>Paste a reference list and check every PubMed ID and DOI against PubMed and Crossref. Catches citations that don't exist or point to the wrong paper, including ones invented by AI tools.</p>
+      <div class="tries"><span>Try:</span> <a href="citation-checker/?refs=Watson%20JD%2C%20Crick%20FH.%20Molecular%20structure%20of%20nucleic%20acids%3B%20a%20structure%20for%20deoxyribose%20nucleic%20acid.%20Nature.%201953%3B171%284356%29%3A737-8.%20PMID%3A%2013054692">A real 1953 reference</a></div>
+      <a class="open" href="citation-checker/">Open the tool</a>
+    </section>
+  </div>
+
+  <h2>How they connect</h2>
+  <div class="flow">
+    <ol>
+      <li><b>Heard a drug name?</b> The Drug Label Explainer shows what it's approved for and what the studies found, then links to the side effects people have reported and to other drugs aimed at the same target.</li>
+      <li><b>Got a tumor DNA report?</b> The Tumor Report Translator explains each finding and links its drugs to their labels and to other drugs aimed at the same gene.</li>
+      <li><b>Worried about side effects?</b> The Adverse Event Explorer compares drugs and links each one back to its FDA label.</li>
+      <li><b>Following a target?</b> The Drug Target Tracker lists every drug against it and links the approved ones to their labels and reported side effects.</li>
+      <li><b>Writing it up?</b> The Citation Checker confirms every reference is real before you share.</li>
+    </ol>
+    <p class="note" style="margin-bottom:0">Every tool can be opened with a search already filled in, so a result can be bookmarked or sent as a link.</p>
+  </div>
+
+  <footer>
+    <p>Built by Aneel Paulus, MD, MS, a physician with about 15 years in oncology drug development who now builds open tools for medicine. All code is MIT-licensed and on <a href="https://github.com/aneelpaulus">GitHub</a>.</p>
+    <p>For education and research only. Not medical advice. Not affiliated with the FDA, NIH, or any drug maker.</p>
+  </footer>
+</main>
+</body>
+</html>
