@@ -6,8 +6,8 @@ Home page for five free, open-source tools that run in the browser on public FDA
 
 | Tool | What it does |
 |---|---|
-| [Drug Label Explainer](https://github.com/aneelpaulus/drug-label-explainer) | A drug's FDA label in plain English: approved uses, study results, age, side effects |
-| [Tumor Report Translator](https://github.com/aneelpaulus/tumor-report-translator) | A tumor DNA report in plain English, with FDA-approved drugs and recruiting trials for each finding |
+| [Drug Label Explainer](https://github.com/aneelpaulus/drug-label-explainer) | A drug's FDA label in plain English: approved uses, study results, age, side effects (mainly for non-clinicians)|
+| [Tumor Report Translator](https://github.com/aneelpaulus/tumor-report-translator) | A tumor DNA report in plain English, with FDA-approved drugs and recruiting trials for each finding (mainly for patients) |
 | [Adverse Event Explorer](https://github.com/aneelpaulus/adverse-event-explorer) | Side effects reported to the FDA, compared across drugs |
 | [Drug Target Tracker](https://github.com/aneelpaulus/drug-target-tracker) | Every drug aimed at a target, by stage, plus papers, preprints, and meeting abstracts |
 | [Citation Checker](https://github.com/aneelpaulus/citation-checker) | Checks that every PubMed ID and DOI in a reference list is real and matches |
